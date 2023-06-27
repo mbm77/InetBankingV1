@@ -90,13 +90,19 @@ public class AddCustomerPage {
 		}
 		
 	}
+	
+	public void custDOBChrome(String mm, String dd, String yy) {
+			
+			txtdob.sendKeys(mm);
+			txtdob.sendKeys(dd);
+			txtdob.sendKeys(yy);
+		
+	}
 
 	public void custDOB(String dob) {
-		//txtdob.sendKeys(dob);
-		//txtdob.sendKeys(dd);
-		//txtdob.sendKeys(yy);
-		txtdob.click();
-		txtdob.sendKeys(dob);
+		
+			txtdob.click();
+			txtdob.sendKeys(dob);
 	}
 	
 	public void custaddress(String caddress) {

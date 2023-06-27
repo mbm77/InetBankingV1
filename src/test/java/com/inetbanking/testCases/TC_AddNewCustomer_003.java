@@ -19,8 +19,8 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		lp.clickSubmit();
 		
 		AddCustomerPage custpage = new AddCustomerPage(driver);
-		custpage.addNewCustomer();
-		//driver.navigate().to("https://demo.guru99.com/v3/manager/addcustomerpage.php");
+		//custpage.addNewCustomer();
+		driver.navigate().to("https://demo.guru99.com/v3/manager/addcustomerpage.php");
 		
 		Thread.sleep(5000);
 		logger.info("providing customer details...");
@@ -30,7 +30,12 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		custpage.custGender("female");
 		logger.info("entered gender...");
 		//Thread.sleep(4000);
-		custpage.custDOB("2018-03-22");
+		if(browser == "chrome") {
+			custpage.custDOBChrome("07","02","1997");
+		}else {
+			custpage.custDOB("2018-03-22");
+		}
+		
 		logger.info("entered dob...");
 		Thread.sleep(8000);
 		custpage.custaddress("India");
@@ -52,10 +57,10 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		
 		logger.info("validation started.....");
 		
-//		if(isAlertPresent() == true) {
-//			driver.switchTo().alert().dissmiss();
-//			driver.switchTo().defaultContent();
-//		}
+		if(isAlertPresent() == true) {
+			driver.switchTo().alert().dismiss();
+			driver.switchTo().defaultContent();
+		}
 		
 		
 		

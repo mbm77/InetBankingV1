@@ -13,6 +13,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -28,6 +29,7 @@ public class BaseClass {
 	public String password = readconfig.getPassword();
 	public static WebDriver driver;
 	public static Logger logger;
+	String browser;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -38,8 +40,12 @@ public class BaseClass {
 		PropertyConfigurator.configure("log4j.properties");
 
 		if (br.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
-			driver = new ChromeDriver();
+			browser = "chrome";
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("start-maximized");
+			options.addArguments("--remote-allow-origins=*");
+			//System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
+			driver = new ChromeDriver(options);
 		} else if (br.equals("edge")) {
 			System.setProperty("webdriver.edge.driver", readconfig.getEdgePath());
 			driver = new EdgeDriver();
