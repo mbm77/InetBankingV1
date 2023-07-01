@@ -23,10 +23,11 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		custpage.addNewCustomer();
 		//driver.navigate().to("https://demo.guru99.com/v3/manager/addcustomerpage.php");
 		
-		Thread.sleep(8000);
+		
 		logger.info("providing customer details...");
 		
 		custpage.custName("mbm");
+		Thread.sleep(5000);
 		logger.info("entered username...");
 		custpage.custGender("female");
 		logger.info("entered gender...");
