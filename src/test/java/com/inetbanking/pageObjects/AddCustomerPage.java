@@ -3,7 +3,6 @@ package com.inetbanking.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -71,11 +70,36 @@ public class AddCustomerPage {
 	@CacheLookup
 	WebElement btnSubmit;
 
-	public void addNewCustomer() {
-		WebElement element = ldriver.findElement(By.xpath("//ul[@class = 'menusubnav']//a[normalize-space()='New Customer']"));
+	public void addNewCustomer() throws InterruptedException {
+		
+	/*	WebElement element = ldriver.findElement(By.xpath("//ul[@class = 'menusubnav']//a[normalize-space()='New Customer']"));
 		Actions actions = new Actions(ldriver);
-		actions.moveToElement(element).click().perform();
-		//lnkAddNewCustomer.click();
+		actions.moveToElement(element).click().perform(); */
+		
+		lnkAddNewCustomer.click();
+		
+		try {
+			WebElement frame1 = ldriver.findElement(By.xpath("//iframe[@title='3rd party ad content']"));
+			ldriver.switchTo().frame(frame1);
+			WebElement frame2 = ldriver.findElement(By.xpath("//iframe[@id='ad_iframe']"));
+			ldriver.switchTo().frame(frame2);
+			WebElement button = ldriver.findElement(By.id("dismiss-button"));
+			button.click();
+			ldriver.switchTo().parentFrame();
+			ldriver.switchTo().defaultContent();
+			Thread.sleep(2000);
+		}catch(RuntimeException e) {
+			
+			System.err.println(e.getMessage());
+		}
+		
+	/*	try {
+			lnkAddNewCustomer.click();
+		}catch(Throwable e) {
+			lnkAddNewCustomer = ldriver.findElement(By.xpath("//ul[@class = 'menusubnav']//a[normalize-space()='New Customer']"));
+			lnkAddNewCustomer.click();
+		} */
+		
 	}
 
 	public void custName(String cname) {

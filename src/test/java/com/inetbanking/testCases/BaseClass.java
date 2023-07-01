@@ -36,6 +36,7 @@ public class BaseClass {
 	public void setup(String br) {
 		BasicConfigurator.configure();
 		logger = Logger.getLogger("BaseClass");
+		
 		//DOMConfigurator.configure("log4j.xml");
 		PropertyConfigurator.configure("log4j.properties");
 

@@ -19,8 +19,8 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		lp.clickSubmit();
 		
 		AddCustomerPage custpage = new AddCustomerPage(driver);
-		//custpage.addNewCustomer();
-		driver.navigate().to("https://demo.guru99.com/v3/manager/addcustomerpage.php");
+		custpage.addNewCustomer();
+		//driver.navigate().to("https://demo.guru99.com/v3/manager/addcustomerpage.php");
 		
 		Thread.sleep(5000);
 		logger.info("providing customer details...");
