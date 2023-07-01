@@ -22,7 +22,7 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		custpage.addNewCustomer();
 		//driver.navigate().to("https://demo.guru99.com/v3/manager/addcustomerpage.php");
 		
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		logger.info("providing customer details...");
 		
 		custpage.custName("mbm");
@@ -37,7 +37,7 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		}
 		
 		logger.info("entered dob...");
-		Thread.sleep(8000);
+		Thread.sleep(4000);
 		custpage.custaddress("India");
 		logger.info("entered address...");
 		custpage.custCity("Nellore");
