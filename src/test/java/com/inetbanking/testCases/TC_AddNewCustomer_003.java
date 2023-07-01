@@ -1,5 +1,6 @@
 package com.inetbanking.testCases;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.openqa.selenium.NoAlertPresentException;
@@ -12,7 +13,7 @@ import com.inetbanking.pageObjects.LoginPage;
 public class TC_AddNewCustomer_003 extends BaseClass{
 	
 	@Test
-	public void addNewCustomer() throws InterruptedException, IOException {
+	public void addNewCustomer() throws InterruptedException, IOException, AWTException {
 		LoginPage lp =new LoginPage(driver);
 		lp.setUserName(username);
 		lp.setPassword(password);
@@ -22,14 +23,14 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		custpage.addNewCustomer();
 		//driver.navigate().to("https://demo.guru99.com/v3/manager/addcustomerpage.php");
 		
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		logger.info("providing customer details...");
 		
 		custpage.custName("mbm");
 		logger.info("entered username...");
 		custpage.custGender("female");
 		logger.info("entered gender...");
-		//Thread.sleep(4000);
+		Thread.sleep(4000);
 		if(browser == "chrome") {
 			custpage.custDOBChrome("07","02","1997");
 		}else {
