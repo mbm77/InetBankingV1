@@ -78,7 +78,7 @@ public class AddCustomerPage {
 		
 		lnkAddNewCustomer.click();
 		
-		try {
+	/*	try {
 			WebElement frame1 = ldriver.findElement(By.xpath("//iframe[@title='3rd party ad content']"));
 			ldriver.switchTo().frame(frame1);
 			WebElement frame2 = ldriver.findElement(By.xpath("//iframe[@id='ad_iframe']"));
@@ -91,7 +91,7 @@ public class AddCustomerPage {
 		}catch(RuntimeException e) {
 			
 			System.err.println(e.getMessage());
-		}
+		}*/
 		
 	/*	try {
 			lnkAddNewCustomer.click();
