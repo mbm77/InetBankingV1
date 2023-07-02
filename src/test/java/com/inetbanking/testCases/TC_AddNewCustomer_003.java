@@ -68,7 +68,7 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		
 		
 		boolean res = driver.getPageSource().contains("Customer Registered Successfully!!!");
-	//	Thread.sleep(3000);
+		Thread.sleep(3000);
 		if(res == true) {
 			Assert.assertTrue(true);
 			logger.info("test case passed....");

@@ -17,6 +17,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+//This is AddCustomerPage class
 public class AddCustomerPage {
 	WebDriver ldriver;
 
