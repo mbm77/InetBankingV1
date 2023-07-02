@@ -45,7 +45,7 @@ public class BaseClass {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("start-maximized");
 			options.addArguments("--remote-allow-origins=*");
-			//System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
+			System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
 			driver = new ChromeDriver(options);
 		} else if (br.equals("edge")) {
 			System.setProperty("webdriver.edge.driver", readconfig.getEdgePath());
