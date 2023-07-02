@@ -3,6 +3,7 @@ package com.inetbanking.pageObjects;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchFrameException;
@@ -13,6 +14,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddCustomerPage {
 	WebDriver ldriver;
@@ -124,20 +127,28 @@ public class AddCustomerPage {
 	}
 
 	public void custName(String cname) {
+		waitForVisibility(txtCustomerName);
 		txtCustomerName.sendKeys(cname);
 	}
+	
+	private void waitForVisibility(WebElement element) throws Error{
+        new WebDriverWait(ldriver,Duration.ofSeconds(60))
+             .until(ExpectedConditions.visibilityOf(element));
+ }
 
 	public void custGender(String cgender) {
 		if(cgender == "male") {
+			waitForVisibility(male);
 			male.click();	
 		}else {
+			waitForVisibility(female);
 			female.click();
 		}
 		
 	}
 	
 	public void custDOBChrome(String mm, String dd, String yy) {
-			
+		waitForVisibility(txtdob);
 			txtdob.sendKeys(mm);
 			txtdob.sendKeys(dd);
 			txtdob.sendKeys(yy);
@@ -145,7 +156,7 @@ public class AddCustomerPage {
 	}
 
 	public void custDOB(String dob) {
-		
+		waitForVisibility(txtdob);
 			txtdob.click();
 			txtdob.sendKeys(dob);
 	}

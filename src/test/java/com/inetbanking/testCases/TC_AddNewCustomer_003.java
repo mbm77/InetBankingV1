@@ -27,11 +27,11 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		logger.info("providing customer details...");
 		
 		custpage.custName("mbm");
-		Thread.sleep(10000);
+		
 		logger.info("entered username...");
 		custpage.custGender("female");
 		logger.info("entered gender...");
-		Thread.sleep(4000);
+		//Thread.sleep(4000);
 		if(browser == "chrome") {
 			custpage.custDOBChrome("07","02","1997");
 		}else {
@@ -39,7 +39,7 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		}
 		
 		logger.info("entered dob...");
-		Thread.sleep(4000);
+		//Thread.sleep(4000);
 		custpage.custaddress("India");
 		logger.info("entered address...");
 		custpage.custCity("Nellore");
@@ -68,7 +68,7 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		
 		
 		boolean res = driver.getPageSource().contains("Customer Registered Successfully!!!");
-		Thread.sleep(3000);
+	//	Thread.sleep(3000);
 		if(res == true) {
 			Assert.assertTrue(true);
 			logger.info("test case passed....");
