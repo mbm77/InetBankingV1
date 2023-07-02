@@ -93,6 +93,7 @@ public class AddCustomerPage {
 			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 			Thread.sleep(2000);
 			ldriver.switchTo().defaultContent();
+			Thread.sleep(2000);
 		}else {
 			System.out.println("no frame present");
 		}

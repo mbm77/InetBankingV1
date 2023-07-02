@@ -27,7 +27,7 @@ public class TC_AddNewCustomer_003 extends BaseClass{
 		logger.info("providing customer details...");
 		
 		custpage.custName("mbm");
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		logger.info("entered username...");
 		custpage.custGender("female");
 		logger.info("entered gender...");
